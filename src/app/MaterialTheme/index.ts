@@ -30,9 +30,7 @@ const light = {
 	components: {
 		MuiContainer: {
 			styleOverrides: {
-				root: {
-					height: '100%',
-				},
+				root: {},
 			},
 		},
 		MuiCssBaseline: {
