@@ -13,17 +13,20 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9",
     "@mui/material": "^9.1.2",
     "@reduxjs/toolkit": "^2.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.3.0",
-    "react-router-dom": "^6"
+    "react-router-dom": "^6",
+    "styled-components": "5.3.1"
   },
   "devDependencies": {
     "@types/node": "^24.13.2",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
+    "@types/styled-components": "^5.1.36",
     "@vitejs/plugin-react": "^6.0.2",
     "oxlint": "^1.69.0",
     "tsx": "^4.22.4",
