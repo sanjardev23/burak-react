@@ -3,34 +3,17 @@ import { NavLink } from "react-router-dom";
 import "../../../css/navbar.css";
 
 export function HomeNavbar() {
-  const authMember = null;
+  const authMember = true;
   return (
     <div className="home-navbar">
-      <Container sx={{ mt: "55px", height: "642px" }}>
-        <Stack
-          sx={{
-            height: "50px",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+      <Container className="navbar-container">
+        <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img
-                style={{ width: "125px", height: "30px" }}
-                src="/icons/burak.svg"
-              />
+              <img className="brand-logo" src="/icons/burak.svg" />
             </NavLink>
           </Box>
-          <Stack
-            sx={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              minWidth: "700px",
-              alignItems: "center",
-            }}
-          >
+          <Stack className="links">
             <Box className={"hover-line"}>
               <NavLink
                 to="/"
@@ -79,15 +62,16 @@ export function HomeNavbar() {
 
             {!authMember ? (
               <Box>
-                <Button
-                  variant="contained"
-                  sx={{ backgroundColor: "#3776CC", color: "#f8f8ff" }}
-                >
+                <Button variant="contained" className="login-button">
                   Login
                 </Button>
               </Box>
             ) : (
-              <img />
+              <img
+                className="user-avatar"
+                src="/icons/default-user.svg"
+                aria-haspopup="true"
+              />
             )}
           </Stack>
         </Stack>
