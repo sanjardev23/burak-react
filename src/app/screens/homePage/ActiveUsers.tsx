@@ -19,7 +19,7 @@ export default function ActiveUsers() {
           <Box className={"category-title"}>Active Users</Box>
           <Stack className={"cards-frame"}>
             <CssVarsProvider>
-              {activeUsers.length == 0 ? (
+              {activeUsers.length !== 0 ? (
                 activeUsers.map((ele, index) => {
                   return (
                     <Card key={index} variant="outlined" className={"card"}>

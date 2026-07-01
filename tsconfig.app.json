@@ -15,6 +15,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Swiper 8.x ships swiper.d.ts but omits it from package.json "exports" */
+    "paths": {
+      "swiper": ["./node_modules/swiper/swiper.d.ts"]
+    },
+
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
