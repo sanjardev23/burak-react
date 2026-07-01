@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import HomePage from "./screens/homePage";
 import ProductsPage from "./screens/productsPage";
 import OrdersPage from "./screens/ordersPage";
@@ -17,13 +17,13 @@ function App() {
   return (
     <>
       {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />}
-      <Routes>
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/orders" element={<OrdersPage />} />
-        <Route path="/members-page" element={<UserPage />} />
-        <Route path="/help" element={<HelpPage />} />
-        <Route path="/" element={<HomePage />} />
-      </Routes>
+      <Switch>
+        <Route path="/products" component={ProductsPage} />
+        <Route path="/orders" component={OrdersPage} />
+        <Route path="/members-page" component={UserPage} />
+        <Route path="/help" component={HelpPage} />
+        <Route exact path="/" component={HomePage} />
+      </Switch>
       <Footer />
     </>
   );
