@@ -10,7 +10,7 @@ export default function PausedOrders() {
           return (
             <Box key={index} className={"order-main-box"}>
               <Box className={"order-box-scroll"}>
-                {[1, 2, 3, 4, 5].map((_ele2, index2) => {
+                {[1, 2, 3].map((_ele2, index2) => {
                   return (
                     <Box key={index2} className={"orders-name-price"}>
                       <img

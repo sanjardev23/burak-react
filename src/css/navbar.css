@@ -20,8 +20,8 @@
 }
 
 .home-navbar .navbar-container .menu .brand-logo {
-  width: 125px;
-  height: 30px;
+  width: 180px;
+  height: 40px;
 }
 
 .home-navbar .navbar-container .menu .links {
@@ -96,7 +96,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  letter-spacing: 0.75px;
+  letter-spacing: -0.75px;
   text-align: left;
   color: #f8f8ff;
 }
@@ -187,8 +187,8 @@
 }
 
 .other-navbar .navbar-container .menu .brand-logo {
-  width: 125px;
-  height: 30px;
+  width: 180px;
+  height: 40px;
 }
 
 .other-navbar .navbar-container .menu .links {
