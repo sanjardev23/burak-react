@@ -1,32 +1,42 @@
-# React + TypeScript + Vite
+# Burak
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This project was originally bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux] and [Redux Toolkit] TS template, and later migrated to [Vite](https://vite.dev).
 
-Currently, two official plugins are available:
+## Publishing Rules
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Layout Components
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+Container 1300px
+Stack
+Box
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- Type of Components
+
+```
+- Screen Components: HomePage & ProductsPage
+- Sectional Components: Statistics & PopularDishes
+- Common (Reusable) Component: Header & Footer
+```
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app in development mode (Vite dev server).
+
+### `yarn build`
+
+Type-checks the project and builds the app for production to the `dist` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### `yarn preview`
+
+Serves the production build from `dist` locally, to sanity-check it before deploying.
+
+### `yarn lint`
+
+Runs Oxlint against the project.

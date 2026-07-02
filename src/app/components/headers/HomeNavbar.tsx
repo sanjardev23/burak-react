@@ -16,46 +16,31 @@ export default function HomeNavbar() {
           </Box>
           <Stack className="links">
             <Box className={"hover-line"}>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? "underline" : "")}
-              >
+              <NavLink to="/" activeClassName={"underline"}>
                 Home
               </NavLink>
             </Box>
             <Box className={"hover-line"}>
-              <NavLink
-                to="/products"
-                className={({ isActive }) => (isActive ? "underline" : "")}
-              >
+              <NavLink to="/products" activeClassName={"underline"}>
                 Products
               </NavLink>
             </Box>
             {authMember ? (
               <Box className={"hover-line"}>
-                <NavLink
-                  to="/orders"
-                  className={({ isActive }) => (isActive ? "underline" : "")}
-                >
+                <NavLink to="/orders" activeClassName={"underline"}>
                   Orders
                 </NavLink>
               </Box>
             ) : null}
             {authMember ? (
               <Box className={"hover-line"}>
-                <NavLink
-                  to="/members-page"
-                  className={({ isActive }) => (isActive ? "underline" : "")}
-                >
+                <NavLink to="/member-page" activeClassName={"underline"}>
                   My Page
                 </NavLink>
               </Box>
             ) : null}
             <Box className={"hover-line"}>
-              <NavLink
-                to="/help"
-                className={({ isActive }) => (isActive ? "underline" : "")}
-              >
+              <NavLink to="/help" activeClassName={"underline"}>
                 Help
               </NavLink>
             </Box>
