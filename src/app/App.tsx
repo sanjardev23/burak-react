@@ -7,6 +7,7 @@ import HomeNavbar from "./components/headers/HomeNavbar";
 import OtherNavbar from "./components/headers/OtherNavbar";
 import Footer from "./components/footer";
 import HelpPage from "./screens/helpPage";
+import Test from "../Test";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
@@ -22,7 +23,8 @@ function App() {
         <Route path="/orders" component={OrdersPage} />
         <Route path="/member-page" component={UserPage} />
         <Route path="/help" component={HelpPage} />
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={Test} />
+        {/* <Route exact path="/" component={HomePage} /> */}
       </Switch>
       <Footer />
     </>
