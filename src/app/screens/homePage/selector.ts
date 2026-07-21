@@ -3,17 +3,17 @@ import type { AppRootStore } from "../../../lib/types/screen";
 
 const selectHomePage = (state: AppRootStore) => state.homePage;
 
-export const selectPopularDishes = createSelector(
+export const retrievePopularDishes = createSelector(
   selectHomePage,
   (HomePage) => HomePage.popularDishes,
 );
 
-export const selectNewDishes = createSelector(
+export const retrieveNewDishes = createSelector(
   selectHomePage,
   (HomePage) => HomePage.newDishes,
 );
 
-export const selectTopUsers = createSelector(
+export const retrieveTopUsers = createSelector(
   selectHomePage,
   (HomePage) => HomePage.topUsers,
 );
