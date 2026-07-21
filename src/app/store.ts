@@ -1,16 +1,11 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import type { ThunkAction, Action } from "@reduxjs/toolkit";
 import reduxLogger from "redux-logger";
-
-const placeholderSlice = createSlice({
-  name: "placeholder",
-  initialState: {},
-  reducers: {},
-});
+import HomePageReducer from "./screens/homePage/slice";
 
 export const store = configureStore({
   reducer: {
-    placeholder: placeholderSlice.reducer,
+    homePage: HomePageReducer,
   },
   middleware: (getDefaultMiddleware) =>
     // @ts-ignore
