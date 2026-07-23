@@ -7,21 +7,25 @@ import Statistics from "./Statistics";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import type { Dispatch } from "@reduxjs/toolkit";
-import { setNewDishes, setPopularDishes } from "./slice";
+import { setNewDishes, setPopularDishes, setTopUsers } from "./slice";
 import type { Product } from "../../../lib/types/product";
 import ProductService from "../../services/ProductService";
 import { ProductCollection } from "../../../lib/enums/product.enum";
+import MemberService from "../../services/MemberService.ts";
+import type { Member } from "../../../lib/types/member.ts";
 import "../../../css/home.css";
 
 /** REDUX SLICE & SELECTOR **/
 const actionDispatch = (dispatch: Dispatch) => ({
   setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
   setNewDishes: (data: Product[]) => dispatch(setNewDishes(data)),
+  setTopUsers: (data: Member[]) => dispatch(setTopUsers(data)),
 });
 
 // Selector: Store => Data
 export default function HomePage() {
-  const { setPopularDishes, setNewDishes } = actionDispatch(useDispatch());
+  const { setPopularDishes, setNewDishes, setTopUsers } =
+    actionDispatch(useDispatch());
 
   // Slice: Data => Store
   useEffect(() => {
@@ -33,9 +37,7 @@ export default function HomePage() {
         order: "productViews",
         productCollection: ProductCollection.DISHES,
       })
-      .then((data) => {
-        setPopularDishes(data);
-      })
+      .then((data) => setPopularDishes(data))
       .catch((err) => console.log(err));
 
     product
@@ -45,9 +47,13 @@ export default function HomePage() {
         order: "createdAt",
         productCollection: ProductCollection.DISHES,
       })
-      .then((data) => {
-        setNewDishes(data);
-      })
+      .then((data) => setNewDishes(data))
+      .catch((err) => console.log(err));
+
+    const member = new MemberService();
+    member
+      .getTopUsers()
+      .then((data) => setTopUsers(data))
       .catch((err) => console.log(err));
   }, []);
 
