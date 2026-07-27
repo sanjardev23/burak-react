@@ -12,13 +12,15 @@ const homePageSlice = createSlice({
   initialState,
   reducers: {
     setPopularDishes: (state, action) => {
-      state.popularDishes = action.payload;
+      state.popularDishes = Array.isArray(action.payload)
+        ? action.payload
+        : [];
     },
     setNewDishes: (state, action) => {
-      state.newDishes = action.payload;
+      state.newDishes = Array.isArray(action.payload) ? action.payload : [];
     },
     setTopUsers: (state, action) => {
-      state.topUsers = action.payload;
+      state.topUsers = Array.isArray(action.payload) ? action.payload : [];
     },
   },
 });
