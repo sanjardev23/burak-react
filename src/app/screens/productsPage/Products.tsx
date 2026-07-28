@@ -18,6 +18,7 @@ import { ProductCollection } from "../../../lib/enums/product.enum";
 import { useEffect, useState, type ChangeEvent } from "react";
 import { useHistory } from "react-router-dom";
 import { serverApi } from "../../../lib/config";
+import type { CartItem } from "../../../lib/types/search";
 
 /** REDUX SLICE & SELECTOR **/
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -27,7 +28,12 @@ const productsRetriever = createSelector(retrieveProducts, (products) => ({
   products,
 }));
 
-export default function Products() {
+interface ProductsProps {
+  onAdd: (item: CartItem) => void;
+}
+
+export default function Products(props: ProductsProps) {
+  const { onAdd } = props;
   const { setProducts } = actionDispatch(useDispatch());
   const { products } = useSelector(productsRetriever);
   const [productSearch, setProductSearch] = useState<ProductInquiry>({
@@ -253,7 +259,20 @@ export default function Products() {
                         sx={{ backgroundImage: `url(${imagePath})` }}
                       >
                         <div className={"product-sale"}>{sizeVolume}</div>
-                        <Button className={"shop-btn"}>
+                        <Button
+                          className={"shop-btn"}
+                          onClick={(e: React.MouseEvent) => {
+                            console.log("button clicked");
+                            onAdd({
+                              _id: product._id,
+                              quantity: 1,
+                              name: product.productName,
+                              price: product.productPrice,
+                              image: product.productImages[0],
+                            });
+                            e.stopPropagation();
+                          }}
+                        >
                           <img
                             src={"/icons/shopping-cart.svg"}
                             style={{ display: "flex" }}
