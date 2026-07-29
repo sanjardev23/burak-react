@@ -11,27 +11,25 @@ interface HomeNavbarProps {
   onRemove: (item: CartItem) => void;
   onDelete: (item: CartItem) => void;
   onDeleteAll: () => void;
+  setSignupOpen: (isOpen: boolean) => void;
+  setLoginOpen: (isOpen: boolean) => void;
 }
 
 export default function HomeNavbar(props: HomeNavbarProps) {
-  const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
+  const {
+    cartItems,
+    onAdd,
+    onRemove,
+    onDelete,
+    onDeleteAll,
+    setSignupOpen,
+    setLoginOpen,
+  } = props;
   const authMember = null;
   const [count, setCount] = useState<number>(0);
   const [value, setValue] = useState<boolean>(true);
 
-  useEffect(() => {
-    console.log("componentDidMount"); // DATA FETCH (from backend server)
-    setCount(count + 1);
-
-    return () => {
-      console.log("componentWillUnmount");
-    };
-  }, [value]);
-
   /** HANDLERS **/
-  const buttonHandler = () => {
-    setValue(!value);
-  };
 
   return (
     <div className="home-navbar">
@@ -83,7 +81,11 @@ export default function HomeNavbar(props: HomeNavbarProps) {
 
             {!authMember ? (
               <Box>
-                <Button variant="contained" className="login-button">
+                <Button
+                  variant="contained"
+                  className="login-button"
+                  onClick={() => setLoginOpen(true)}
+                >
                   Login
                 </Button>
               </Box>
@@ -102,13 +104,13 @@ export default function HomeNavbar(props: HomeNavbarProps) {
               World's Most Delicious Cousine
             </Box>
             <Box className={"wel-txt"}>The Choice, not just a choice</Box>
-            <Box className={"service-txt"}>{count} hours service</Box>
+            <Box className={"service-txt"}>24 hours service</Box>
             <Box className={"signup"}>
               {!authMember ? (
                 <Button
                   variant={"contained"}
                   className={"signup-button"}
-                  onClick={buttonHandler}
+                  onClick={() => setSignupOpen(true)}
                 >
                   SIGN UP
                 </Button>
