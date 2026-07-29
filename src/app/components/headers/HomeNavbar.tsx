@@ -7,10 +7,14 @@ import type { CartItem } from "../../../lib/types/search";
 
 interface HomeNavbarProps {
   cartItems: CartItem[];
+  onAdd: (item: CartItem) => void;
+  onRemove: (item: CartItem) => void;
+  onDelete: (item: CartItem) => void;
+  onDeleteAll: () => void;
 }
 
 export default function HomeNavbar(props: HomeNavbarProps) {
-  const { cartItems } = props;
+  const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
   const authMember = null;
   const [count, setCount] = useState<number>(0);
   const [value, setValue] = useState<boolean>(true);
@@ -69,7 +73,13 @@ export default function HomeNavbar(props: HomeNavbarProps) {
               </NavLink>
             </Box>
             {/* BASKET */}
-            <Basket cartItems={cartItems} />
+            <Basket
+              cartItems={cartItems}
+              onAdd={onAdd}
+              onRemove={onRemove}
+              onDelete={onDelete}
+              onDeleteAll={onDeleteAll}
+            />
 
             {!authMember ? (
               <Box>
