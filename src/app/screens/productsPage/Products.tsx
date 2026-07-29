@@ -261,8 +261,7 @@ export default function Products(props: ProductsProps) {
                         <div className={"product-sale"}>{sizeVolume}</div>
                         <Button
                           className={"shop-btn"}
-                          onClick={(e: React.MouseEvent) => {
-                            console.log("button clicked");
+                          onClick={(e) => {
                             onAdd({
                               _id: product._id,
                               quantity: 1,
