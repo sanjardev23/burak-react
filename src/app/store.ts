@@ -12,7 +12,7 @@ export const store = configureStore({
   reducer: {
     homePage: HomePageReducer,
     productsPage: ProductsPageReducer,
-    orderPage: OrersPageReducer,
+    ordersPage: OrersPageReducer,
   },
 });
 
