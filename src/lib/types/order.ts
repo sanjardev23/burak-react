@@ -4,8 +4,8 @@ import type { Product } from "./product";
 export interface OrderItemInput {
   itemQuantity: number;
   itemPrice: number;
-  orderId: string;
-  productId?: string;
+  orderId?: string;
+  productId: string;
 }
 export interface OrderItem {
   _id: string;

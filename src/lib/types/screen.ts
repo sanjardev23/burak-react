@@ -4,10 +4,9 @@ import type { Product } from "./product";
 
 /** REACT APP STATE **/
 export interface AppRootStore {
-  ordersPage: any;
   homePage: HomePageState;
   productsPage: ProductsPageState;
-  orderPage: OrdersPageState;
+  ordersPage: OrdersPageState;
 }
 /** HOMEPAGE **/
 export interface HomePageState {
